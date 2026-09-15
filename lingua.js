@@ -5,7 +5,10 @@
 // che è l'ordine di priorità giusto per una pagina che qualcuno apre per
 // sapere se ci si può fidare.
 (function () {
-  var sezioni = document.querySelectorAll("[data-lingua]");
+  // `section` e non ogni `[data-lingua]`: anche i pulsanti lo portano, e
+  // nascondendo la lingua non scelta sparivano con lei, lasciando un solo
+  // pulsante — quello della lingua in cui la pagina era già.
+  var sezioni = document.querySelectorAll("section[data-lingua]");
   var bottoni = document.querySelectorAll(".lingue button");
   if (!sezioni.length || !bottoni.length) return;
 
